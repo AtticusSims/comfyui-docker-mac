@@ -51,7 +51,7 @@ RUN python3 -c "import torch; print(f'MPS available: {torch.backends.mps.is_avai
 WORKDIR $HOME/app
 
 
-RUN git clone https://github.com/comfyanonymous/ComfyUI . && \pip install xformers!=0.0.24 --no-cache-dir -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu121
+RUN git clone https://github.com/comfyanonymous/ComfyUI . && \pip install xformers!=0.0.24 --no-cache-dir -r requirements.txt 
 
 # instal custom nodes
 RUN echo "Installing custom nodes..." 
