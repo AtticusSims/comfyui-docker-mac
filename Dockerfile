@@ -38,13 +38,14 @@ RUN pyenv install $PYTHON_VERSION && \
     huggingface-hub "protobuf<4" "click<8.1"
 
 # PyTorch installation for Mac M1/M2
-RUN pip3 install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu
+RUN pip uninstall torch
+RUN pip install --pre torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/nightly/cpu
 
 # Set environment variable for MPS fallback
 ENV PYTORCH_ENABLE_MPS_FALLBACK=1
 
 # Verify MPS availability
-RUN python3 -c "import torch; print(f'MPS available: {torch.backends.mps.is_available()}')"
+RUN python -c "import torch; print(f'MPS available: {torch.backends.mps.is_available()}')"
 
 
 # Set the working directory to /data if USE_PERSISTENT_DATA is set, otherwise set to $HOME/app
@@ -232,4 +233,4 @@ RUN wget -c https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_
 RUN echo "Done"
 
 
-CMD python main.py --listen 0.0.0.0 --port 7860 --multi-user ${USE_PERSISTENT_DATA:+--output-directory=/data/}
+CMD python main.py --listen 0.0.0.0 --port 7860 --multi-user ${USE_PERSISTENT_DATA:+--output-directory=/data/} --cpu
