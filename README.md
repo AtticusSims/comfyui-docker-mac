@@ -11,16 +11,8 @@
    - You may be prompted to enter your Mac password to allow Docker to make changes
    - Wait for Docker to start (you'll see a whale icon in your menu bar when it's ready)
 
-3. Clone the ComfyUI repository:
-   - Open Terminal (press Cmd + Space, type "Terminal", and press Enter)
-   - Run the following commands:
-     ```
-     cd ~/Desktop
-     git clone https://github.com/comfyanonymous/ComfyUI
-     cd ComfyUI
-     ```
 
-4. Build the Docker image:
+3. Build the Docker image:
    - In Terminal, ensure you're in the ComfyUI directory, then run:
      ```
      docker build -t comfyui .
@@ -28,14 +20,14 @@
    - This builds an image named "comfyui" based on the existing Dockerfile
    - Wait for the build process to complete (this may take some time)
 
-5. Run the Docker container:
+4. Run the Docker container:
    - Once the build is finished, run this command:
      ```
      docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui-image
      ```
    - This starts a container from your image and maps port 7860
 
-6. Access ComfyUI:
+5. Access ComfyUI:
    - Open a web browser and go to `http://localhost:7860`
    - You should see the ComfyUI interface running
 
@@ -63,31 +55,23 @@ These updated instructions use the existing Dockerfile in the ComfyUI repository
    - Dockerが変更を加えるために、Macのパスワードの入力を求められる場合があります
    - Dockerが起動するまで待つ（準備ができるとメニューバーにクジラのアイコンが表示されます）
 
-3. ComfyUIリポジトリをクローンする：
-   - ターミナルを開く（Cmd + Spaceを押し、"Terminal"と入力してEnter）
-   - 以下のコマンドを実行：
-     ```
-     cd ~/Desktop
-     git clone https://github.com/comfyanonymous/ComfyUI
-     cd ComfyUI
-     ```
 
-4. Dockerイメージをビルドする：
+3. Dockerイメージをビルドする：
    - ターミナルで、ComfyUIディレクトリにいることを確認し、以下のコマンドを実行：
      ```
-     docker build -t comfyui .
+     docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui-image
      ```
    - これにより、既存のDockerfileに基づいて"comfyui"という名前のイメージがビルドされます
    - ビルドプロセスが完了するまで待ちます（時間がかかる場合があります）
 
-5. Dockerコンテナを実行する：
+4. Dockerコンテナを実行する：
    - ビルドが完了したら、以下のコマンドを実行：
      ```
      docker run -p 7860:7860 comfyui
      ```
    - これにより、作成したイメージからコンテナが起動し、ポート7860がマッピングされます
 
-6. ComfyUIにアクセスする：
+5. ComfyUIにアクセスする：
    - ウェブブラウザを開き、`http://localhost:7860` にアクセス
    - ComfyUIのインターフェースが表示されるはずです
 
