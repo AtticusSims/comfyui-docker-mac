@@ -31,7 +31,7 @@
 5. Run the Docker container:
    - Once the build is finished, run this command:
      ```
-     docker run -p 7860:7860 comfyui
+     docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui-image
      ```
    - This starts a container from your image and maps port 7860
 

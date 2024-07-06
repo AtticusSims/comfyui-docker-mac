@@ -55,7 +55,7 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI . && \pip install xforme
 
 # instal custom nodes
 RUN echo "Installing custom nodes..." 
-RUN pip install -U onnxruntime-gpu
+RUN pip install -U onnxruntime
 
 
 RUN cd custom_nodes && git clone https://github.com/ltdrdata/ComfyUI-Manager.git
@@ -232,4 +232,5 @@ RUN wget -c https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_
 
 RUN echo "Done"
 
-CMD ["python", "main.py", "--listen", "0.0.0.0", "--port", "7860", "--output-directory", "--multi-user", "${USE_PERSISTENT_DATA:+/data/}"]
+
+CMD python main.py --listen 0.0.0.0 --port 7860 --multi-user ${USE_PERSISTENT_DATA:+--output-directory=/data/}
