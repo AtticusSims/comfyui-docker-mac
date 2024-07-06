@@ -23,7 +23,7 @@
 4. Run the Docker container:
    - Once the build is finished, run this command:
      ```
-     docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui-image
+     docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui
      ```
    - This starts a container from your image and maps port 7860
 
@@ -59,7 +59,7 @@ These updated instructions use the existing Dockerfile in the ComfyUI repository
 3. Dockerイメージをビルドする：
    - ターミナルで、ComfyUIディレクトリにいることを確認し、以下のコマンドを実行：
      ```
-     docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui-image
+     docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui
      ```
    - これにより、既存のDockerfileに基づいて"comfyui"という名前のイメージがビルドされます
    - ビルドプロセスが完了するまで待ちます（時間がかかる場合があります）
