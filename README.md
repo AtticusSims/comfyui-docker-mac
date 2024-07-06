@@ -13,7 +13,7 @@
 
 
 3. Build the Docker image:
-   - In Terminal, ensure you're in the ComfyUI directory, then run:
+   - In Terminal, ensure you're in the comfyui-docker-mac directory, then run:
      ```
      docker build -t comfyui .
      ```
@@ -57,7 +57,7 @@ These updated instructions use the existing Dockerfile in the ComfyUI repository
 
 
 3. Dockerイメージをビルドする：
-   - ターミナルで、ComfyUIディレクトリにいることを確認し、以下のコマンドを実行：
+   - ターミナルで、comfyui-docker-macディレクトリにいることを確認し、以下のコマンドを実行：
      ```
      docker run -p 7860:7860 -e USE_PERSISTENT_DATA=1 -v $(pwd)/data:/data comfyui
      ```
