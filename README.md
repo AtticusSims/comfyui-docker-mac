@@ -47,7 +47,10 @@ Additional notes:
 
 These updated instructions use the existing Dockerfile in the ComfyUI repository, which should already be optimized for various systems, including Mac M1/M2. If you encounter any issues specific to M1/M2 compatibility, you may need to modify the Dockerfile, but for most users, the existing setup should work well.
 
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
+
+# インストール
 
 1. Mac用Docker Desktopをインストールする：
    - 公式Dockerウェブサイト（https://www.docker.com/products/docker-desktop）にアクセス
@@ -95,6 +98,3 @@ These updated instructions use the existing Dockerfile in the ComfyUI repository
 - コンテナIDを指定して停止するには、`docker stop <container_id>`を使用します
 
 これらの手順により、Mac M1/M2上でDockerを使用してComfyUIを実行できるはずです。ただし、一部の機能やパフォーマンスはNVIDIA GPUを使用する場合と比べて制限される可能性があることに注意してください。
-
-Citations:
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/382256/f8347ac5-1001-428b-9d45-9c8661395195/paste.txt
